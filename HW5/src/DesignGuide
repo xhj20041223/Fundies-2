@@ -1,0 +1,30 @@
+Design Guide
+
+Classes:
+
+Game - Creates the world for Sokoban Level
+Level - Stores all the information regarding the level such as the grid cell content and grid ground content
+Grid - An abstract class that stores each row of the grid
+GridGround - stores all the information regarding blank grounds and targets
+GridContent - stores all the information regarding the player, brick wall, and other moveable objects
+GroundFactory - A class that helps to create ground cells
+ContentFactory - A class that helps to create content cells
+GroundContent - An abstract class for ground objects
+CellContent - an abstract class for cell objects
+BlankCell - represents a blank cell
+BlankGround - represents a blank ground
+BrickWall - represents a brick wall
+Target - represents a target
+Moveable - represents a moveable object
+Trophy - represents a trophy
+Player - represents a player
+Crate - represents a crate
+Row - which contains all the cells in the row
+
+Interfaces:
+
+ILoCell - represents a list of cells (a row)
+ILoRow - represents a list of rows (a grid)
+ILoString - represents a list of strings
+CellFactory - represents a factory to help create sokoban cells
+Content - represents a type of content in Sokoban

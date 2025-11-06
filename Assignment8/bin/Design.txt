@@ -1,0 +1,72 @@
+interfaces:
+
+    Content:
+    represents a type of content (a cell) on a Sokoban grid
+
+        classes that implement Content:
+
+        abstract class GroundContent:
+        represents ground content of a Sokoban grid
+
+            classes that extend GroundContent:
+
+            BlankGround // represents an empty ground space
+            Target // represents a target which to place a trophy on
+            Hole // represents a pit in which CellContents can fall and disappear into
+            
+
+        abstract class CellContent:
+        represents cell content of a Sokoban grid
+
+            classes that extend CellContent:
+
+            BlankCell // represents an empty space
+            BrickWall // represents a brick wall
+            Movable // represents movable content objects
+
+                classes that extend Movable:
+
+                Player // represents the player
+                Crate // represents a crate
+                Trophy // represents a trophy which to push onto a target
+    
+    CellFactory:
+    creates cells of the required type (ground or content) depending on the type of CellFactory
+
+        classes that implement CellFactory:
+
+        GroundFactory // creates a ground cell of the specified kind
+        ContentFactory // creates a content cell of the specified kind
+
+classes:
+
+    Row:
+    represents a list of cells within a grid, creates row of cells based on a String
+
+    abstract class Grid // represents a Grid of a Sokoban board
+			// most functions and methods are under this class
+
+        classes that extend Grid:
+
+        GridGround // represents a grid of ground cells
+		   // all non-empty grounds are stored here
+  		   // include holes, targets and ices
+        GridContent // represents a grid of content cells
+		    // all movable contents are stored here
+  		    // include player, trophies and crates
+
+    Level: 
+    represents a level of Sokoban
+
+    Game:
+    handles all the user to game interactions
+
+Lists:
+
+interfaces:
+    
+    ILoString // contains a method which converts the list of Strings to a list of Rows
+
+Function objects:
+    PosDirection // a function that takes in a position and direction and returns the position 
+                 // of the cell in that direction

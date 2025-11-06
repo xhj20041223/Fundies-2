@@ -1,0 +1,37 @@
+User Guide
+
+ Goal is to match all colored targets with their corresponding colored trophy.
+ Every movement (include undo) will increase the step.
+ Try to finish with the least steps!
+
+Key Movement:
+ UP Key - Moves player up
+ DOWN Key - Moves player down
+ LEFT Key - Moves player left
+ RIGHT Key - Moves player right
+ u Key - Undo a move (This will INCREASE the score!!!)
+
+ If space next to player is empty, player can move to it
+ Players can push movable objects, but not multiple objects
+
+ If player encounters a hole, it's game over
+ Players can push objects into holes and make that object disappear
+
+ Consider the ice as a ideal smoothy surface:
+ Any movable object can slide on the ice.
+ The Crates and Trophies are not ideally rigid object, but no force will be lost
+ In other word, if a sliding object hit another, the sliding object will bring the
+ object that been hit to the end of the ice. Since no force is lost, the force
+ should be big enough to send the object been hit out of the ice if there is an
+ empty space for it. 
+ When an object get out of ice, if there is any movable object block at the end,
+ it will fully transfer the force to that object cause that object to be pushed
+ but the object itself will remain at the end of the ice.
+ Notice that after a collide both moving object will be decelerated so any other
+ collide will cause them stop.
+ The force needed to get an object out of ice is the same as push an object in the
+ road, so there is no way to a player to push an object out of the ice while this object
+ push another object behind it.
+ Anyway, if u get confused, just think about the curling. They should work similarly.
+ You should be able to test all situations in the tutor level
+
